@@ -16,13 +16,20 @@ static String buildInsertSql(String table, String[] fields) {
 	StringBuilder sb = new StringBuilder(1024);
 	sb.append("INSERT INTO ")
 	  .append(table)
-	  .append(" (")
-	  .append(fields[0])
+	  .append(" (");
+	for(String fieldss:fields)
+	{
+		sb.append(fieldss).append(", ");
+	}
+	
+	//去掉多余的空格
+	sb.delete(sb.length()-2, sb.length());
+	  /*.append(fields[0])
 	  .append(", ")
 	  .append(fields[1])
 	  .append(", ")
-	  .append(fields[2])
-	  .append(") VALUES (?, ?, ?)");
+	  .append(fields[2])*/
+	  sb.append(") VALUES (?, ?, ?)");
     return sb.toString();
 }
 }
