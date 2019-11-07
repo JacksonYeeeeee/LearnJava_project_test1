@@ -35,7 +35,7 @@ class Person{
 	//构造方法
 	public Person(String name,int age)
 	{
-		this.name = name;
+		this.setName(name);
 		this.age = age;
 	}
 }
